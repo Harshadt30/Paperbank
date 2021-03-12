@@ -9,13 +9,14 @@
     android:padding="20dp">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etUsername"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:hint="Username" >
+        android:hint="Username">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etUsername"
+            android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
@@ -23,7 +24,6 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
@@ -32,21 +32,13 @@
         android:layout_marginTop="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="forgot password?"
-        android:layout_marginTop="15dp"
-        android:layout_gravity="right"
-        android:textSize="16sp"
-        />
 
     <Button
         android:id="@+id/btnLogIn"
@@ -60,11 +52,23 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Forgot Password?"
+        android:textAllCaps="false"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:textSize="15sp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/signUp"
-        android:text="First Time here? Sign Up"
+        android:text="Don't have an account? Sign Up"
         android:textColor="@color/black"
         android:layout_gravity="center"
         android:textAllCaps="false"
+        android:textSize="15sp"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         />
 

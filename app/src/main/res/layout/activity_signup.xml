@@ -12,8 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/etFirstname"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:layout_weight="1"
@@ -22,6 +22,8 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etFirstname"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
@@ -29,7 +31,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/etLastname"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:layout_weight="1"
@@ -38,6 +39,7 @@
 
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etLastname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
@@ -47,7 +49,6 @@
     </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etUsername"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:hint="Username"
@@ -55,6 +56,8 @@
         android:layout_marginTop="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etUsername"
+            android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
@@ -62,7 +65,6 @@
     </com.google.android.material.textfield.TextInputLayout>
     
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etEmail"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -70,6 +72,7 @@
         android:hint="Email" >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmail"
             android:inputType="textEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -78,7 +81,6 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etPhone"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -86,6 +88,7 @@
         android:hint="Phone no." >
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPhone"
             android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -94,7 +97,6 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
@@ -103,6 +105,7 @@
         android:layout_marginTop="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -123,8 +126,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/logIn"
+        android:layout_marginTop="15dp"
         android:text="Already Have an account? Log In"
-        android:textColor="@color/black"
         android:layout_gravity="center"
         android:textAllCaps="false"
         style="@style/Widget.MaterialComponents.Button.TextButton"
