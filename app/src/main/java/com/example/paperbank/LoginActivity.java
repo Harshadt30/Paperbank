@@ -2,6 +2,7 @@ package com.example.paperbank;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,6 +27,10 @@ public class LoginActivity extends AppCompatActivity {
             if(!validateUsername() | !validatePassword()) {
                 return;
             }
+
+            Intent dashBoard = new Intent(LoginActivity.this, DashboardActivity.class);
+            startActivity(dashBoard);
+
         });
     }
 
