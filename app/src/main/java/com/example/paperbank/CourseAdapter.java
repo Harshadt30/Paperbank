@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class CourseAdapter extends ArrayAdapter<String> {
 
     Context context;
-    private String[] courseArrayList;
+    String[] courseArrayList;
 
     public CourseAdapter(Context context, String[] courseArrayList) {
 
