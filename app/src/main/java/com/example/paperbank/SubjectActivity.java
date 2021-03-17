@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class SubjectActivity extends AppCompatActivity {
@@ -27,6 +29,17 @@ public class SubjectActivity extends AppCompatActivity {
 
         SubjectAdapter subjectAdapter = new SubjectAdapter(this, subjectArray);
         lstSubject.setAdapter(subjectAdapter);
+
+        lstSubject.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                String paper = (String) parent.getItemAtPosition(position);
+                Intent paperActivity = new Intent(SubjectActivity.this, PaperActivity.class);
+                paperActivity.putExtra("Paper", paper);
+                startActivity(paperActivity);
+            }
+        });
 
     }
 }
