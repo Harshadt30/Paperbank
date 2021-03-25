@@ -21,12 +21,14 @@ public class MainActivity extends AppCompatActivity {
 
             Intent logIn = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(logIn);
+            finish();
         });
 
         btnSingUp.setOnClickListener(v-> {
 
             Intent signUp = new Intent(MainActivity.this, SignupActivity.class);
             startActivity(signUp);
+            finish();
         });
     }
 }

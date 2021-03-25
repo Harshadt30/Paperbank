@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
 
             Intent dashBoard = new Intent(LoginActivity.this, DashboardActivity.class);
             startActivity(dashBoard);
-
+            finish();
         });
     }
 

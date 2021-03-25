@@ -8,7 +8,7 @@ import android.widget.EditText;
 
 public class SignupActivity extends AppCompatActivity {
 
-    private EditText etFirstname, etLastname, etUsername, etEmail, etPhone, etPassword;
+    private EditText etUsername, etEmail, etPhone, etPassword;
     private Button btnSingUp;
 
     @Override
@@ -16,8 +16,6 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        etFirstname = findViewById(R.id.etFirstname);
-        etLastname = findViewById(R.id.etLastname);
         etUsername = findViewById(R.id.etUsername);
         etEmail = findViewById(R.id.etEmail);
         etPhone = findViewById(R.id.etPhone);
@@ -26,40 +24,13 @@ public class SignupActivity extends AppCompatActivity {
 
         btnSingUp.setOnClickListener(v-> {
 
-            if(!validateFirstname() | !validateLastname() | !validateUsername() | !validateEmail() | !validatePhone() | validatePassword()) {
+            if(!validateUsername() | !validateEmail() | !validatePhone() | validatePassword()) {
 
                 return;
             }
         });
     }
-    private boolean validateFirstname() {
 
-        String firstname = etFirstname.getText().toString().trim();
-        if(firstname.isEmpty()) {
-
-            etFirstname.setError("Field Can't ba empty");
-            return false;
-        }
-        else {
-
-            etFirstname.setError(null);
-            return true;
-        }
-    }
-    private boolean validateLastname() {
-
-        String lastname = etLastname.getText().toString().trim();
-        if(lastname.isEmpty()) {
-
-            etLastname.setError("Field Can't ba empty");
-            return false;
-        }
-        else {
-
-            etLastname.setError(null);
-            return true;
-        }
-    }
     private boolean validateUsername() {
 
         String username = etUsername.getText().toString().trim();
