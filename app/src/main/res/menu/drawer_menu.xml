@@ -21,10 +21,6 @@
             android:icon="@drawable/ic_paper"
             android:title="Paper" />
 
-        <item
-            android:id="@+id/nav_books"
-            android:icon="@drawable/ic_books"
-            android:title="Books" />
 
         <item
             android:id="@+id/nav_email"
@@ -36,7 +32,7 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/logOut"
+            android:id="@+id/logOUT"
             android:icon="@drawable/ic_log_out"
             android:title="Log Out" />
 
