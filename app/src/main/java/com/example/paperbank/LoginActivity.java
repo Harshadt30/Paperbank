@@ -63,10 +63,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (Boolean.parseBoolean(response)) {
 
-
                     addUser();
-
-
                 } else {
 
                     builder.setMessage("Wrong Email or Password").setPositiveButton("Try again", new DialogInterface.OnClickListener() {
@@ -161,7 +158,7 @@ public class LoginActivity extends AppCompatActivity {
                         phone_ne = jsonObject.getInt("user_phone");
                         password = jsonObject.getString("user_password");
 
-                        if (db.addUser(username, email, phone_ne, gender, password) == true) {
+                        if (db.addUser(id,username, email, phone_ne, gender, password) == true) {
 
                             Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                             startActivity(intent);

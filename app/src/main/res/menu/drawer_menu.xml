@@ -7,14 +7,19 @@
 
         <item
             android:id="@+id/nav_home"
+            android:checked="true"
             android:icon="@drawable/ic_home"
-            android:title="Dashboard"
-            android:checked="true"/>
+            android:title="Dashboard" />
 
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_profile"
             android:title="Profile" />
+
+        <item
+            android:id="@+id/nav_request"
+            android:icon="@drawable/ic_upload"
+            android:title="Request Paper" />
 
         <item
             android:id="@+id/nav_paper"
@@ -27,9 +32,14 @@
             android:icon="@drawable/ic_support"
             android:title="Contact" />
 
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/ic_search"
+            android:title="Search" />
+
     </group>
 
-    <group android:checkableBehavior="single">
+    <group android:id="@+id/log" >
 
         <item
             android:id="@+id/logOUT"

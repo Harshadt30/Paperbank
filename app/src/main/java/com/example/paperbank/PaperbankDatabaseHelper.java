@@ -11,14 +11,6 @@ import java.security.PublicKey;
 public class PaperbankDatabaseHelper extends SQLiteOpenHelper {
 
     public static final String TABLE_NAME = "user";
-
-    public static final String id = "id";
-    public static final String name = "name";
-    public static final String email = "email";
-    public static final String phone_no = "phone_no";
-    public static final String gender = "gender";
-    public static final String password = "password";
-
     static final String DB_NAME = "demo";
     static final int DB_VERSION = 1;
 
@@ -40,11 +32,11 @@ public class PaperbankDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " +TABLE_NAME);
     }
 
-    public boolean addUser(String username, String email, int phone_no, String gender, String password) {
+    public boolean addUser(int user_id, String username, String email, int phone_no, String gender, String password) {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("id", 0);
+        contentValues.put("id", user_id);
         contentValues.put("username", username);
         contentValues.put("email", email);
         contentValues.put("phone_no", phone_no);
@@ -65,14 +57,14 @@ public class PaperbankDatabaseHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("SELECT * FROM "+ TABLE_NAME + " WHERE id = 0", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM "+ TABLE_NAME + "", null);
         return cursor;
     }
 
     public boolean removeUser() {
 
         SQLiteDatabase db = this.getWritableDatabase();
-        if( db.delete(TABLE_NAME, " id = 0", null) == 1 ) {
+        if( db.delete(TABLE_NAME, "", null) == 1 ) {
 
             return true;
         }

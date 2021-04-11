@@ -8,12 +8,14 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:usesCleartextTraffic="true"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Paperbank">
-        <activity android:name=".ProfileActivity"></activity>
+        android:theme="@style/Theme.Paperbank"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".RequestActivity"></activity>
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".PaperActivity" />
         <activity android:name=".SubjectActivity" />
         <activity android:name=".CourseActivity" />

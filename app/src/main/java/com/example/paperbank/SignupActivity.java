@@ -70,7 +70,7 @@ public class SignupActivity extends AppCompatActivity {
                             PaperbankDatabaseHelper db = new PaperbankDatabaseHelper(SignupActivity.this);
 
 
-                            if (db.addUser(etUsername.getText().toString(), etEmail.getText().toString(), Integer.parseInt(etPhone.getText().toString()), etGender.getText().toString(), etPassword.getText().toString()) == true) {
+                            if (db.addUser(0,etUsername.getText().toString(), etEmail.getText().toString(), Integer.parseInt(etPhone.getText().toString()), etGender.getText().toString(), etPassword.getText().toString()) == true) {
 
                                 Intent intent = new Intent(SignupActivity.this, DashboardActivity.class);
                                 startActivity(intent);

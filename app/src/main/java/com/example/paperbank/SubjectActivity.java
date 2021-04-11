@@ -27,8 +27,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import javax.security.auth.Subject;
-
 public class SubjectActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
@@ -53,17 +51,19 @@ public class SubjectActivity extends AppCompatActivity {
         home = findViewById(R.id.home);
         course = findViewById(R.id.course);
 
-        home.setOnClickListener(v -> { 
+        home.setOnClickListener(v -> {
 
             Intent intent = new Intent(SubjectActivity.this, DashboardActivity.class);
             startActivity(intent);
         });
 
-        course.setOnClickListener(v-> { finish(); });
+        course.setOnClickListener(v -> {
+            finish();
+        });
         db = new PaperbankDatabaseHelper(this);
 
         Cursor cursor = db.userRow();
-        if(cursor.moveToNext()) {
+        if (cursor.moveToNext()) {
 
             View navView = nav_view.getHeaderView(0);
             userMail = navView.findViewById(R.id.userMail);
@@ -78,7 +78,9 @@ public class SubjectActivity extends AppCompatActivity {
         String courseDETAIL = intent.getStringExtra("course_detail");
         setSupportActionBar(toolbar);
 
-        toolbar.setNavigationOnClickListener(v -> { drawerLayout.openDrawer(GravityCompat.START); });
+        toolbar.setNavigationOnClickListener(v -> {
+            drawerLayout.openDrawer(GravityCompat.START);
+        });
 
         UrlPaperbank urlPaperbank = new UrlPaperbank();
         subject = new ArrayList<>();
@@ -136,7 +138,7 @@ public class SubjectActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
 
-                Toast.makeText(getApplicationContext(), ""+error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "" + error.toString(), Toast.LENGTH_SHORT).show();
             }
         });
         requestQueue.add(stringRequest);
@@ -159,7 +161,21 @@ public class SubjectActivity extends AppCompatActivity {
                     finish();
                     break;
 
-                case R.id.nav_paper :
+                case R.id.nav_search:
+
+                    Intent intent3 = new Intent(SubjectActivity.this, SearchActivity.class);
+                    startActivity(intent3);
+                    break;
+
+                case R.id.nav_request:
+
+                    Intent intent5 = new Intent(SubjectActivity.this, RequestActivity.class);
+                    startActivity(intent5);
+                    break;
+
+                case R.id.nav_paper:
+                    Intent intent4 = new Intent(SubjectActivity.this, SearchActivity.class);
+                    startActivity(intent4);
                     break;
 
                 case R.id.nav_email:

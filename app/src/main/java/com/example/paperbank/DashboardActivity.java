@@ -41,7 +41,7 @@ public class DashboardActivity extends AppCompatActivity {
         db = new PaperbankDatabaseHelper(this);
 
         Cursor cursor = db.userRow();
-        if(cursor.moveToNext()) {
+        if (cursor.moveToNext()) {
 
             View navView = nav_view.getHeaderView(0);
             userMail = navView.findViewById(R.id.userMail);
@@ -73,6 +73,18 @@ public class DashboardActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        search.setOnClickListener(v -> {
+
+            Intent intent = new Intent(DashboardActivity.this, SearchActivity.class);
+            startActivity(intent);
+        });
+
+        request.setOnClickListener(v-> {
+
+            Intent intent = new Intent(DashboardActivity.this, RequestActivity.class);
+            startActivity(intent);
+        });
+
         //Handle clicks on drawer
         nav_view.setNavigationItemSelectedListener(item -> {
 
@@ -81,13 +93,24 @@ public class DashboardActivity extends AppCompatActivity {
                 case R.id.nav_home:
                     break;
 
+                case R.id.nav_search:
+
+                    Intent intent = new Intent(DashboardActivity.this, SearchActivity.class);
+                    startActivity(intent);
+                    break;
+
+                case R.id.nav_request :
+                    Intent intent5 = new Intent(DashboardActivity.this, RequestActivity.class);
+                    startActivity(intent5);
+                    break;
+
                 case R.id.nav_profile:
 
                     Intent intent1 = new Intent(DashboardActivity.this, ProfileActivity.class);
                     startActivity(intent1);
                     break;
 
-                case R.id.nav_paper :
+                case R.id.nav_paper:
 
                     Intent intent2 = new Intent(DashboardActivity.this, CourseActivity.class);
                     startActivity(intent2);

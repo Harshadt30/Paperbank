@@ -66,6 +66,7 @@ public class PaperActivity extends AppCompatActivity {
 
         db = new PaperbankDatabaseHelper(this);
         Cursor cursor = db.userRow();
+
         if(cursor.moveToNext()) {
 
             View navView = nav_view.getHeaderView(0);
@@ -163,6 +164,20 @@ public class PaperActivity extends AppCompatActivity {
                     break;
 
                 case R.id.nav_paper :
+
+                    Intent intent3 = new Intent(PaperActivity.this, CourseActivity.class);
+                    startActivity(intent3);
+                    break;
+
+                case R.id.nav_request :
+
+                    Intent intent5 = new Intent(PaperActivity.this, RequestActivity.class);
+                    startActivity(intent5);
+                    break;
+                case R.id.nav_search:
+
+                    Intent intent4 = new Intent(PaperActivity.this, SearchActivity.class);
+                    startActivity(intent4);
                     break;
 
                 case R.id.nav_email:

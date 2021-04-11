@@ -109,9 +109,6 @@ public class CourseActivity extends AppCompatActivity {
 
 
             Intent intent = new Intent(CourseActivity.this, SubjectActivity.class);
-            intent.putExtra("course_id", courseID);
-            intent.putExtra("course_name", courseNAME);
-            intent.putExtra("course_detail", courseDETAIL);
             startActivity(intent);
 
         });
@@ -134,7 +131,18 @@ public class CourseActivity extends AppCompatActivity {
                     finish();
                     break;
 
+                case R.id.nav_search:
+
+                    Intent intent2 = new Intent(CourseActivity.this, SearchActivity.class);
+                    startActivity(intent2);
+                    break;
+
                 case R.id.nav_paper :
+                    break;
+
+                case R.id.nav_request :
+                    Intent intent5 = new Intent(CourseActivity.this, RequestActivity.class);
+                    startActivity(intent5);
                     break;
 
                 case R.id.nav_email:

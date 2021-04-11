@@ -78,6 +78,17 @@ public class ProfileActivity extends AppCompatActivity {
                     finish();
                     break;
 
+                case R.id.nav_search:
+
+                    Intent intent1 = new Intent(ProfileActivity.this, SearchActivity.class);
+                    startActivity(intent1);
+                    break;
+
+                case R.id.nav_request :
+                    Intent intent5 = new Intent(ProfileActivity.this, RequestActivity.class);
+                    startActivity(intent5);
+                    break;
+
                 case R.id.nav_profile:
                     break;
 
